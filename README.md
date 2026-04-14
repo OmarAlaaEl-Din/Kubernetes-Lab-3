@@ -75,7 +75,7 @@ Simulating a multi-regional production environment by deploying `africa` and `eu
 The configuration of the Ingress resource is crucial for the path-based routing success. Below is the full YAML manifest used, highlighting two critical technical aspects:
 
 1.  **Traefik Middleware Integration:** The `annotations` section references the `world-strip-prefix@kubernetescrd` middleware to handle path stripping.
-2.  **Path Routing Rules:** The `spec.rules` define how traffic for `world.universe.mine` is routed to the `africa` service on port `8888` based on the `/africa` prefix.
+2.  **Path Routing Rules:** The `spec.rules` define how traffic for `world.universe.mine` is routed to the `africa` service on port `8888` based on the `/africa` prefix or to the `europe` service on port `8888` based on the `/europe` prefix.
 
 ### Full Ingress Manifest via `kubectl edit`:
 
