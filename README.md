@@ -20,6 +20,7 @@ The deployment was exposed via a `NodePort` service on port `5000`.
 **Solution:** Applied a JSON patch to name the port `http`, enabling full DNS discovery capabilities.
 
 * **Action:** Expose deployment and patch service for SRV compatibility.
+
 ![Step 2: Service Exposure](./Screenshot%202026-04-13%20010247.png)
 ![Step 3: JSON Patching for DNS](./Screenshot%202026-04-13%20010248.png)
 
