@@ -11,6 +11,7 @@ This repository showcases the implementation of complex networking scenarios in 
 To ensure resource isolation and security, a dedicated namespace `iti` was provisioned. An Nginx-based deployment was launched with 2 replicas to demonstrate internal load balancing.
 
 * **Action:** Created `iti` namespace and `web` deployment.
+
 ![Step 1: Namespace & Deployment](./Screenshot%202026-04-13%20010214.png)
 
 ### 2. Service Exposure & Port Naming
