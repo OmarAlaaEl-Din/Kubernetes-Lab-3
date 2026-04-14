@@ -22,15 +22,20 @@ The deployment was exposed via a `NodePort` service on port `5000`.
 * **Action:** Expose deployment and patch service for SRV compatibility.
 
 ![Step 2: Service Exposure](./Screenshot%202026-04-13%20010247.png)
+
 ![Step 3: JSON Patching for DNS](./Screenshot%202026-04-13%20010248.png)
 
 ### 3. DNS Validation (SRV & FQDN)
 Verification was conducted using a `dnsutils` pod. We successfully resolved the SRV record `_http._tcp.web.iti.svc.cluster.local`, confirming that the cluster DNS is correctly tracking service metadata.
 
 * **Validation:** SRV record lookup and cross-namespace `curl` test.
+
 ![Step 4: DNS Pod Setup](./Screenshot%202026-04-13%20012228.png)
+
 ![Step 5: SRV Resolution Proof](./Screenshot%202026-04-13%20014857.png)
+
 ![Step 6: FQDN Connectivity Test](./Screenshot%202026-04-13%20020136.png)
+
 ![Step 7: Final 200 OK Response](./Screenshot%202026-04-13%20020218.png)
 
 ---
@@ -41,8 +46,11 @@ Verification was conducted using a `dnsutils` pod. We successfully resolved the 
 Simulating a multi-regional production environment by deploying `africa` and `europe` applications within a `world` namespace. Both apps are abstracted behind `ClusterIP` services on port `8888`.
 
 * **Action:** Deploying regional apps and cluster services.
+
 ![Step 8: World Namespace Setup](./Screenshot%202026-04-13%20184909.png)
+
 ![Step 9: Regional Workloads](./Screenshot%202026-04-13%20185054.png)
+
 ![Step 10: ClusterIP Definition](./Screenshot%202026-04-13%20185210.png)
 
 ### 2. Solving the "Path-to-Root" 404 Issue
@@ -55,6 +63,7 @@ Simulating a multi-regional production environment by deploying `africa` and `eu
     * **Logic:** Integrated `strip-prefix` middleware via Ingress annotations.
 
 * **Final Verification:** Path-based routing successfully returning region-specific content.
+
 ![Step 11: Final Middleware & Ingress Implementation](./Screenshot%202026-04-13%20195904.png)
 
 ---
