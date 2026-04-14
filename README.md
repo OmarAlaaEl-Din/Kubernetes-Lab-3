@@ -68,8 +68,6 @@ Simulating a multi-regional production environment by deploying `africa` and `eu
 
 ---
 
----
-
 ## 🛠️ Ingress Manifest (Technical Highlights)
 
 The configuration of the Ingress resource is crucial for the path-based routing success. Below is the full YAML manifest used, highlighting two critical technical aspects:
